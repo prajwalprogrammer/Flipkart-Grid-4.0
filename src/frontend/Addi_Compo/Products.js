@@ -18,7 +18,7 @@ const ProductsData = [
   {
     Serial_id: "102",
     name: "Camera",
-    link: Earphones,
+    link: Camera,
     price: "25,990",
     productDesc: "Best ever camera",
     warrentyTime:"5months",

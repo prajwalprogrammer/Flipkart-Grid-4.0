@@ -20,6 +20,8 @@ import { TransactionContext } from "../context/TransactionContext";
 import Products from "../Addi_Compo/Products";
 import ProductDetails from "../Addi_Compo/ProductDetails";
 import Footer from "../Addi_Compo/Footer";
+import HandleLogout from "../Addi_Compo/Logout";
+import Claimed from "./Claimed";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,7 +29,7 @@ function App() {
   const [nft, setNFT] = useState({});
   const [marketplace, setMarketplace] = useState({});
 
-  const { IsAdmin } = useContext(TransactionContext);
+  const { IsAdmin,account1, setAccount1,marketplace1, setMarketplace1,nft1, setNFT1 } = useContext(TransactionContext);
 
   // MetaMask Login/Connect
   const web3Handler = async () => {
@@ -35,6 +37,7 @@ function App() {
       method: "eth_requestAccounts",
     });
     setAccount(accounts[0]);
+    setAccount1(accounts[0]);
     // Get provider from Metamask
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     // Set signer
@@ -46,6 +49,8 @@ function App() {
 
     window.ethereum.on("accountsChanged", async function (accounts) {
       setAccount(accounts[0]);
+      setAccount1(accounts[0]);
+
       await web3Handler();
     });
     loadContracts(signer);
@@ -59,11 +64,12 @@ function App() {
     );
     console.log(marketplace.itemCount());
     setMarketplace(marketplace);
+    setMarketplace1(marketplace);
     const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer);
     setNFT(nft);
+    setNFT1(nft);
     setLoading(false);
   };
-
   const AddMoreComp = () => {
     return (
       <>
@@ -101,7 +107,7 @@ function App() {
                 />
               ):<Route
                   path="/"
-                  element={<Welcome/>}
+                  element={<Welcome web3Handler={web3Handler} account={account}/>}
                 />}
               <Route
                 path="/create"
@@ -142,11 +148,25 @@ function App() {
                   />
                 }
               />
+              <Route
+                path="/claimed"
+                element={
+                  <Claimed
+                    marketplace={marketplace}
+                    nft={nft}
+                    account={account}
+                  />
+                }
+              />
+               <Route
+                path="/logout"
+                element={<HandleLogout/>}
+              />
             </Routes>
           )}
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
   );
 }

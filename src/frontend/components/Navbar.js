@@ -21,9 +21,9 @@ const Navigation = ({ web3Handler, account }) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            {!IsAdmin && <Nav.Link as={Link} to="/"  className="navItems">
+             <Nav.Link as={Link} to="/"  className="navItems">
               Home
-            </Nav.Link>}
+            </Nav.Link>
             {IsAdmin && (
               <Nav.Link as={Link} to="/create" className="navItems">
                 Create
@@ -40,14 +40,17 @@ const Navigation = ({ web3Handler, account }) => {
               </Nav.Link>
             )}
             <Nav.Link as={Link} to="/my-purchases" className="navItems">
-              {IsAdmin ?"Claimed Warranties":"My Warranties"}
+              {!IsAdmin &&"Claimed Warranties"}
+            </Nav.Link>
+            <Nav.Link as={Link} to="/claimed" className="navItems">
+              {IsAdmin &&"Claimed Warranties"}
             </Nav.Link>
             {!IsAdmin ? (
               <Nav.Link as={Link} to="/login" className="navItems">
                 Admin Login
               </Nav.Link>
             ) : (
-              <Nav.Link onClick={() => HandleLogout()} className="navItems">
+              <Nav.Link as={Link} to="/logout" className="navItems">
                 Logout
               </Nav.Link>
             )}
@@ -59,7 +62,7 @@ const Navigation = ({ web3Handler, account }) => {
                 href={`https://etherscan.io/address/${account}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="button nav-button btn-sm mx-4"
+                className=""
               >
                 <Button variant="outline-light">
                   {account.slice(0, 5) + "..." + account.slice(38, 42)}

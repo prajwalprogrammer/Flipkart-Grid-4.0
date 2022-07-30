@@ -1,0 +1,160 @@
+body{
+    background: #141E30;  /* fallback for old brow123sers */
+    background: -webkit-linear-gradient(to right, #344f6e, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2b3849, #080e18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  }
+.loginform{
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 700px;
+  width: 30%;
+  height: 60%;
+  margin: 100px auto;
+  background-color: #ffffff;
+  
+  border-radius: 25px;
+}
+.headerTitle{
+  text-align: center;
+  font-family: 'open sans', sans-serif;
+  padding: 2rem 0;
+  margin: 0;
+  font-size: 2rem;
+}
+.formIN{
+    width: 80%;
+    box-sizing: border-box;
+      border: none;
+    font-size: 1.3rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+    transition: box-shadow 0.2s ease-in;
+  }
+  
+  .formIN:focus{
+     box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
+     outline: none;
+  }
+  
+  .formIN::-webkit-input-placeholder{
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  
+  .formIN:hover::-webkit-input-placeholder,
+  .formIN:focus::-webkit-input-placeholder{
+    opacity: 0;
+  }
+  .lab{
+    align-self: start;
+    padding-left: 4.5rem;
+    padding-bottom: 0.5rem;
+    color: rgba(187,187,187,0.9);
+  }
+  
+  
+  .button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    max-width: 100%;
+     border-radius: 25px;
+    width: 80%;
+    height: 40px;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 700;
+    background: rgb(34,193,195);
+    background: linear-gradient(90deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+    padding-bottom: 1.5rem;
+    
+  }
+/* 
+
+
+
+.button{
+ 
+}
+
+.button button:hover{
+  opacity: 0.8;
+}
+
+.button{
+  
+} */
+
+
+.row123{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    max-width: 100%;
+    
+  }
+  
+  .row123 input{
+    width: 80%;
+    box-sizing: border-box;
+      border: none;
+    font-size: 1.3rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+    box-shadow: inset 0px -3px 0px 0px rgba(187,187,187,0.2);
+    transition: box-shadow 0.2s ease-in;
+  }
+  
+  .row123 input:focus{
+     box-shadow: inset 0px -3px 0px 0px rgba(34,193,195,0.7);
+     outline: none;
+  }
+  
+  .row123 input::-webkit-input-placeholder{
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  
+  .row123 input:hover::-webkit-input-placeholder,
+  .row123 input:focus::-webkit-input-placeholder{
+    opacity: 0;
+  }
+  
+  .row123 label{
+    align-self: start;
+    padding-left: 4.5rem;
+    padding-bottom: 0.5rem;
+    color: rgba(187,187,187,0.9);
+  }
+  
+  .btn123{
+    border-radius: 25px;
+    width: 80%;
+    height: 40px;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 700;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1a3758, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a7b8cd, #080e18); 
+    border: 0px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-out;
+  }
+  
+  .btn123:hover{
+    opacity: 0.8;
+  }
+  
+  #button123{
+    padding-bottom: 1.5rem;
+  }
+  
+

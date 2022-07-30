@@ -1,24 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import {TransactionContext} from '../context/TransactionContext'
 
-export default function Home() {
-    const handleLogout = () => {
-        sessionStorage.removeItem('Auth Token');
-        navigate('/login')
-    }
+export  const HandleLogout = () => {
+    const{ setIsAdmin}=useContext(TransactionContext)
     let navigate = useNavigate();
-    useEffect(() => {
-        let authToken = sessionStorage.getItem('Auth Token')
-        console.log(authToken)
-        if (authToken) {
-            navigate('/')
-        }
-    }, [])
-    return (
-        <div>
-            Home Page
-
-            <button onClick={handleLogout}>Log out</button>
-        </div>
-    )
+    sessionStorage.removeItem('Auth Token');
+    setIsAdmin(false)
+    navigate('/')
+    return( <></>)
 }
+export default HandleLogout

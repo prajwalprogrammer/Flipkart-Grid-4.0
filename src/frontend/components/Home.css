@@ -1,5 +1,5 @@
 .box-size{
-    width: 25%;
+    width: 23%;
 }
 
 .secondLine{
@@ -10,6 +10,13 @@
     position: relative;
     padding-left: 40px;
 }
+.tit{
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    /* position: absolute; */
+    left: 45%;
+  }
 
 .NFTbox{
     margin: 20px 30px ;
@@ -23,7 +30,7 @@
 }
 
 .NFTboxImg{
-    width: 250px;
+    width: 285px;
     height: 240px;
     background-color: white;
     border-radius: 30px;
@@ -37,10 +44,19 @@
 }
 
 .NFTcardContentName{
+    font-size: 20px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin: 20px;
+    text-align: flex-end;
+}
+.NFTcardContentName1{
     font-size: 26px;
     color: white;
     font-family: 'Raleway', sans-serif;
     margin: 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
 

@@ -24,7 +24,7 @@ function renderSoldItems(items) {
   )
 }
 
-export default function MyListedItems({ marketplace, nft, account }) {
+export default function Claimed({ marketplace, nft, account }) {
   const [loading, setLoading] = useState(true)
   const [listedItems, setListedItems] = useState([])
   const [soldItems, setSoldItems] = useState([])
@@ -75,11 +75,11 @@ export default function MyListedItems({ marketplace, nft, account }) {
   )
   return (
     <div className="MyListedItem">
-        {listedItems1.length > 0 ?
+        {soldItems1.length > 0 ?
         <>
-        <h2 className='myListedItemTitle'>Listed Warranties</h2>
+        <h2 className='myListedItemTitle'>Claimed Warranties</h2>
         <div className='secondLine'>
-            {listedItems1.map((item, idx) => (
+            {soldItems1.map((item, idx) => (
               <div className='NFTbox box-size'>
               <div key={idx} className="">
               <img src={item.image} className="NFTboxImg"alt={item.name}/>

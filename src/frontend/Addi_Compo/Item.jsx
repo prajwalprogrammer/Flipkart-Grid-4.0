@@ -7,7 +7,7 @@ import { TransactionContext } from "../context/TransactionContext";
 
 const Item=(props)=>{
     const {
-        currentAccount,
+        account1,
         connectWallet,
       } = useContext(TransactionContext);
     const [name, setName] = useState(props.name);
@@ -15,11 +15,11 @@ const Item=(props)=>{
     const [warrenty, setwarrenty] = useState(props.warrentyTime);
     const [date,setdate]=useState(new Date().toLocaleString("en-US", "Asia/Delhi"));
     
-    const address=currentAccount;
+    const address=account1;
     const addToList=()=>{
         Axios.post("http://localhost:3001/insert",{
             name:name,
-            address:currentAccount,
+            address:account1,
             date:date,
             warrenty:warrenty,
             price:price,
@@ -34,7 +34,7 @@ const Item=(props)=>{
         console.log(warrenty);
         setdate(new Date().toLocaleString("en-US", "Asia/Delhi"));
         console.log(date);
-        console.log(currentAccount);
+        console.log(account1);
         addToList();
     }
 

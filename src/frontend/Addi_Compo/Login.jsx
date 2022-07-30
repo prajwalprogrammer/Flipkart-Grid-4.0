@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import "./Login.css";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -9,8 +10,7 @@ import { app } from '../firebase/firebase';
 
 import { useNavigate } from "react-router-dom";
 import { TransactionContext } from "../context/TransactionContext";
-import './Login.css'
-const FormHeader = (props) => <h2 id="headerTitle">{props.title}</h2>;
+const FormHeader = (props) => <h2 className="headerTitle">{props.title}</h2>;
 
 const Form = (props) => (
   <div>
@@ -31,16 +31,17 @@ const Form = (props) => (
 );
 
 const FormButton = (props) => (
-  <div id="button" className="row">
-    <button onClick={props.action}>{props.title}</button>
+  <div id="button123" className="row123">
+    <button onClick={props.action} className="btn123">{props.title}</button>
   </div>
 );
 
 const FormInput = (props) => (
-  <div className="row">
-    <label>{props.description}</label>
+  <div className="row123">
+    <label className="lab">{props.description}</label>
     <input
       type={props.type}
+      className="formIN"
       placeholder={props.placeholder}
       onChange={(e) => props.value(e.target.value)}
     />
@@ -77,7 +78,7 @@ export const Login = () => {
       });
   };
   return (
-    <div id="loginform">
+    <div className="loginform">
       <ToastContainer />
       <FormHeader title="Login" />
       <Form
