@@ -1,0 +1,6 @@
+.createForm{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1a3758, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2b3849, #080e18); 
+    padding: 30px;
+}

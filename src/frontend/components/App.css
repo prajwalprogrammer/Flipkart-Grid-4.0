@@ -1,0 +1,160 @@
+.firstLine{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* bottom: 200px; */
+}
+
+.tit{
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+.box{
+    margin: 20px 30px ;
+    border: 2px solid white;
+    padding: 20px;
+    background-color: #061826;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 30px;
+}
+
+.boxImg{
+    width: 250px;
+    height: 240px;
+    background-color: white;
+    border-radius: 30px;
+}
+  
+.boxContent{
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin: 20px;
+}
+
+.buyBtn{
+    margin: 0 80px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.products{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1a3758, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2b3849, #080e18); 
+}
+
+.footer{
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    background-color: #000000;
+  }
+  
+  .success{
+    text-align: center;
+    padding: 40px 0;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2b3849, #080e18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  .successTit{
+    color: #88B04B;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .successContent{
+    color: #404F5E;
+    font-family: 'Raleway', sans-serif;
+    font-size:20px;
+    margin: 0;
+  }
+  
+  .successCard{
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    border: 2px solid black;
+  }
+  
+  i {
+    color: #9ABC66;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left:-15px;
+  }
+  
+  .circle{
+    border-radius:200px; 
+    height:200px;
+    width:200px;
+    background: #F8FAF5;
+    margin:0 auto;
+    border: 2px solid black;
+  }
+
+  table{
+    border: 2px solid white;
+    margin: 20px auto;
+    color: white;
+  }
+  
+  th{
+    border-bottom: 2px solid white;
+    padding: 10px;
+    color: black;
+    background-color: white;
+  }
+  
+  td{
+    padding: 10px;
+  }
+
+  .col1{
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+
+  .colHead{
+    border: 2px solid black;
+  }
+  
+  .order{
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  
+  .myListedItemTitle{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+  }
+
+  .MyListedItem{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1a3758, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2b3849, #080e18); 
+  }

@@ -1,0 +1,119 @@
+.box-size{
+    width: 25%;
+}
+
+.secondLine{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    padding-left: 40px;
+}
+
+.NFTbox{
+    margin: 20px 30px ;
+    border: 2px solid white;
+    padding: 20px;
+    background-color: #061826;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 30px;
+}
+
+.NFTboxImg{
+    width: 250px;
+    height: 240px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.NFTcardContent{
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.NFTcardContentName{
+    font-size: 26px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin: 20px;
+}
+
+
+.NFTbtn-grad{
+    background-image: linear-gradient(to right, #0e1727 0%, #243B55  51%, #141E30  100%);
+    padding: 5px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    font-family: 'Raleway', sans-serif;
+    border-color: white;
+    text-decoration: none;
+}
+
+.fullHome{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1a3758, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2b3849, #080e18); 
+}
+
+.NFTcardStatusActive{
+    border: 2px solid black;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%);
+    margin: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;      
+    border-radius: 10px;
+    display: block;
+    padding: 10px 10px;
+    font-weight: bold;
+}
+
+.NFTcardStatusActive:hover{
+    background-position: right center; /* change the direction of the change here */
+    color: white;
+    text-decoration: none;
+}
+         
+.NFTcardStatusNotActive{
+    border: 2px solid black;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #EB3349 0%, #F45C43  51%, #EB3349  100%);
+    margin: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;      
+    border-radius: 10px;
+    display: block;
+    padding: 10px 10px;
+    font-weight: bold;
+}
+
+.NFTcardStatusNotActive:hover{
+    background-position: right center; /* change the direction of the change here */
+    color: black;
+    text-decoration: none;
+}
