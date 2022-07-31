@@ -19,9 +19,9 @@ const OrderedItem=({UpdateData})=>{
         });
         });
     }
-    const CreateList= async(id,productName,address)=>{
-       await UpdateData(id,productName,address)
-        deleteItem(id)
+    const CreateList= async({_id,productName,address,des,uri})=>{
+       await UpdateData(_id,productName,address,des,uri);
+        deleteItem(_id)
     }
     if(!itemDetail.length){
         return(<main className="tit">
@@ -43,7 +43,7 @@ const OrderedItem=({UpdateData})=>{
                     <th className='col1 colHead'>Create</th> 
                 </tr>
                     {itemDetail.map((val,key)=>{
-                    return <tr key={key}><td className='col1'>{val._id}</td> <td className='col1'>{val.productName}</td> <td className='col1'>{val.price}</td> <td className='col1'>{val.address}</td> <td className='col1'>{val.itemOrderedAt}</td> <td className='col1'>{val.expiryDate}</td> <td className='col1'><input type="checkbox" onClick={()=>deleteItem(val._id)}></input></td><td className='col1'><input type="button" onClick={()=>CreateList(val._id,val.productName,val.address)} value="Create"></input></td></tr>
+                    return <tr key={key}><td className='col1'>{val._id}</td> <td className='col1'>{val.productName}</td> <td className='col1'>{val.price}</td> <td className='col1'>{val.address}</td> <td className='col1'>{val.itemOrderedAt}</td> <td className='col1'>{val.expiryDate}</td> <td className='col1'><input type="checkbox" onClick={()=>deleteItem(val._id)}></input></td><td className='col1'><input type="button" onClick={()=>CreateList(val)} value="Create"></input></td></tr>
                     })}
                 </table>
             

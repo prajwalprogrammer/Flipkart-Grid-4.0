@@ -1,5 +1,6 @@
 import React from 'react';
 import img2 from '../../images/icons8-info.svg';
+import { shortenAddress } from '../utils/shortenAddress';
 import './Welcome.css';
  const Welcome=({ web3Handler, account })=>{
 
@@ -13,7 +14,7 @@ import './Welcome.css';
             <div className="cardObject">
                 <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" className='eth' alt="img"></img>
                 <img src={img2} alt="Info" className='info'></img>
-                <p className="address">{account}</p>
+                {account?<p className="address">{shortenAddress(account)}</p>:<p className="address">---</p>}
                 <p className="ethereum">Ethereum</p>
             </div>
             <br></br>

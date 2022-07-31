@@ -85,7 +85,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
               <img src={item.image} className="NFTboxImg"alt={item.name}/>
                 <div className="NFTboxContent">
                   <h1 className="NFTcardContentName1">{item.name}</h1>
-                  <h1 className="NFTcardContentName">{ethers.utils.formatEther(item.totalPrice)} ETH</h1>
+                  {/* <h1 className="NFTcardContentName">{ethers.utils.formatEther(item.totalPrice)} ETH</h1> */}
                   <h1 className="NFTcardContent">Valid till : {item.tillData}</h1>
                   <h1 className="NFTcardContent">To : {shortenAddress(item.buyer)}</h1>
                  

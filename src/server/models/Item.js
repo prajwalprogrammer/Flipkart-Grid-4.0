@@ -4,7 +4,9 @@ const itemSchema=new mongoose.Schema({
     address:String,
     itemOrderedAt:String,
     expiryDate:String,
-    price:String
+    price:String,
+    des:String,
+    uri:String
 });
 const Item=mongoose.model("Item",itemSchema);
 module.exports=Item;

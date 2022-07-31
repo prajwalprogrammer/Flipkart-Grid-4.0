@@ -13,6 +13,8 @@ const Item=(props)=>{
     const [name, setName] = useState(props.name);
     const [price, setprice] = useState(props.price);
     const [warrenty, setwarrenty] = useState(props.warrentyTime);
+    const [des,setDes] = useState(props.productDesc);
+    const [uri,setUri] = useState(props.img);
     const [date,setdate]=useState(new Date().toLocaleString("en-US", "Asia/Delhi"));
     
     const address=account1;
@@ -23,6 +25,8 @@ const Item=(props)=>{
             date:date,
             warrenty:warrenty,
             price:price,
+            des:des,
+            uri:uri
         });
     }
     const setProduct=(info)=>{

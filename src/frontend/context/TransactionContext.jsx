@@ -24,14 +24,16 @@ const [purchasesloading, setpurchasesLoading] = useState(true);
   const [account1, setAccount1] = useState(null);
   const [nft1, setNFT1] = useState({});
   const [marketplace1, setMarketplace1] = useState({});
-
+  
+  //Phone number
+  const [phoneNum,setPhoneNum] = useState("");
 
   var q = new Date();
   var m = q.getMonth() + 1;
   var d = q.getDay();
   var y = q.getFullYear();
 
-  var date = new Date(y, m, d);
+  var date = new Date();
   
   const HandleLogout = () => {
     // alert("HI")
@@ -95,9 +97,9 @@ const [purchasesloading, setpurchasesLoading] = useState(true);
         const totalPrice = await marketplace1.getTotalPrice(i.itemId)
         // define listed item object
         setlastFive(
-          metadata.description.slice(metadata.description.length - 10)
+          metadata.description.slice(metadata.description.length - 17)
         );
-        var mydate = new Date(metadata.description.slice(metadata.description.length - 10));
+        var mydate = new Date(metadata.description.slice(metadata.description.length - 17));
         let item = {
           totalPrice,
           price: i.price,
@@ -106,8 +108,8 @@ const [purchasesloading, setpurchasesLoading] = useState(true);
           description: metadata.description,
           image: metadata.image,
           buyer:i.UserAddress,
-          tillData:metadata.description.slice(metadata.description.length - 10),
-          status: date > mydate ? "Expired" : "Active",
+          tillData:metadata.description.slice(metadata.description.length - 17),
+          status: date.getTime() > mydate.getTime() ? "Expired" : "Active",
         }
 
         console.log("item11111",item)
@@ -147,9 +149,9 @@ const [purchasesloading, setpurchasesLoading] = useState(true);
         const totalPrice = await marketplace1.getTotalPrice(i.itemId);
         // define listed item object
         setlastFive(
-          metadata.description.slice(metadata.description.length - 10)
+          metadata.description.slice(metadata.description.length - 17)
         );
-        var mydate = new Date(metadata.description.slice(metadata.description.length - 10),);
+        var mydate = new Date(metadata.description.slice(metadata.description.length - 17),);
         console.log("vf", metadata);
         console.log("lastFive", i);
         let purchasedItem = {
@@ -161,8 +163,8 @@ const [purchasesloading, setpurchasesLoading] = useState(true);
           image: metadata.image,
           seller: i.seller,
           buyer: i.buyer,
-          tillData:metadata.description.slice(metadata.description.length - 10),
-          status: date > mydate ? "Expired" : "Active",
+          tillData:metadata.description.slice(metadata.description.length - 17),
+          status: date.getTime() > mydate.getTime() ? "Expired" : "Active",
         };
         return purchasedItem;
       })
@@ -192,7 +194,8 @@ const [purchasesloading, setpurchasesLoading] = useState(true);
         loadListedItems1,
         marketplace1, setMarketplace1,nft1, setNFT1,account1, setAccount1,
         loadmarketplaceItems1,
-        loadPurchasedItems1,purchasesloading,purchases1,setPurchases1
+        loadPurchasedItems1,purchasesloading,purchases1,setPurchases1,
+        phoneNum,setPhoneNum
       }}
     >
       {children}

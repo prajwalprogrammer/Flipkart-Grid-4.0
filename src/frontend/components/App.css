@@ -160,3 +160,19 @@ a{
     background: -webkit-linear-gradient(to right, #1a3758, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2b3849, #080e18); 
   }
+
+  .phoneInput{
+    width: 50%;
+    margin: 20px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  
+  .phoneBtn{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+  }
