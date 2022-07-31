@@ -1,4 +1,4 @@
-import { useState,useEffect,useContext } from 'react'
+import { useState,useContext } from 'react'
 import OrderedItem from './OrderedItem';
 import { ethers } from "ethers"
 import { Row, Form, Button } from 'react-bootstrap'
@@ -21,19 +21,6 @@ const Create = ({ marketplace, nft }) => {
   const [loading, setLoading] = useState(false);
   const {phoneNum}=useContext(TransactionContext);
 
-  const uploadToIPFS = async (event) => {
-    event.preventDefault()
-    const file = image;
-    if (typeof file !== 'undefined') {
-      try {
-        const result = await client.add(file)
-        console.log(result)
-        setImage(`https://ipfs.infura.io/ipfs/${result.path}`)
-      } catch (error){
-        console.log("ipfs image upload error: ", error)
-      }
-    }
-  }
 
   var today = new Date();
   var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -62,20 +49,15 @@ const Create = ({ marketplace, nft }) => {
   }
   const mintThenList = async (result) => {
     const uri = `https://ipfs.infura.io/ipfs/${result.path}`
-    // mint nft 
     await(await nft.mint(uri)).wait()
-    // get tokenId of new nft 
     const id = await nft.tokenCount()
-    // approve marketplace to spend nft
     await(await nft.setApprovalForAll(marketplace.address, true)).wait()
-    // add nft to marketplace
     const listingPrice = ethers.utils.parseEther('0.0001')
     await(await marketplace.makeItem(nft.address, id, listingPrice, UserAddress)).wait()
     setLoading(false);
   }
 
   const UpdateData = (id,name,address,des,uri) => {
-    // alert('Update'+id);
     setSerial(id);
     setName(name);
     setUserAddress(address);
@@ -98,7 +80,6 @@ const Create = ({ marketplace, nft }) => {
               <Form.Control value={UserAddress} onChange={(e) => setUserAddress(e.target.value)} size="lg" required type="text" placeholder="User Adress:" />
               <Form.Control onChange={(e) => setExpDate(e.target.value)} size="lg" required type="date" placeholder="Set Expiry Date: " />
               <Form.Control onChange={(e) => setexTime(e.target.value)} size="lg" required type="time" placeholder="Set Expiry time: " />
-              {/* <Form.Control onChange={(e) => setTime(e.target.value)} size="lg"/> */}
               <div className="d-grid px-0">
                 {loading?(
                   <main className="tit">

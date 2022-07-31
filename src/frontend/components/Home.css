@@ -8,13 +8,12 @@
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-    padding-left: 40px;
+    padding-left: 180px;
 }
 .tit{
     color: white;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    /* position: absolute; */
     left: 45%;
   }
 
@@ -23,14 +22,14 @@
     border: 2px solid white;
     padding: 20px;
     background-color: #061826;
-    background: #000000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #000000;  
+    background: -webkit-linear-gradient(to right, #434343, #000000);  
+    background: linear-gradient(to right, #434343, #000000); 
     border-radius: 30px;
 }
 
 .NFTboxImg{
-    width: 285px;
+    width: 265px;
     height: 240px;
     background-color: white;
     border-radius: 30px;

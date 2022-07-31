@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navigation from "./Navbar";
@@ -6,41 +6,36 @@ import Home from "./Home.js";
 import Create from "./Create.js";
 import Login from "../Addi_Compo/Login";
 import MyListedItems from "./MyListedItems.js";
-import Welcome from "../Addi_Compo/Welcome"
-import Navbar from "../Addi_Compo/Navbar"
+import Welcome from "../Addi_Compo/Welcome";
 import MyPurchases from "./MyPurchases.js";
 import MarketplaceAbi from "../contractsData/Marketplace.json";
 import MarketplaceAddress from "../contractsData/Marketplace-address.json";
 import NFTAbi from "../contractsData/NFT.json";
 import NFTAddress from "../contractsData/NFT-address.json";
 import { ethers } from "ethers";
-import { Spinner } from "react-bootstrap";
 import "./App.css";
 import { TransactionContext } from "../context/TransactionContext";
 import Products from "../Addi_Compo/Products";
 import ProductDetails from "../Addi_Compo/ProductDetails";
-import Footer from "../Addi_Compo/Footer";
 import HandleLogout from "../Addi_Compo/Logout";
 import Claimed from "./Claimed";
+import AdminContent from "../Addi_Compo/AdminContent";
 
 function App() {
-  const [loading, setLoading] = useState(true);
   const [account, setAccount] = useState(null);
   const [nft, setNFT] = useState({});
   const [marketplace, setMarketplace] = useState({});
 
-  const { IsAdmin,account1, setAccount1,marketplace1, setMarketplace1,nft1, setNFT1 } = useContext(TransactionContext);
+  const { IsAdmin, setAccount1, setMarketplace1, setNFT1 } =
+    useContext(TransactionContext);
 
-  // MetaMask Login/Connect
   const web3Handler = async () => {
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     setAccount(accounts[0]);
     setAccount1(accounts[0]);
-    // Get provider from Metamask
     const provider = new ethers.providers.Web3Provider(window.ethereum);
-    // Set signer
     const signer = provider.getSigner();
 
     window.ethereum.on("chainChanged", (chainId) => {
@@ -56,7 +51,6 @@ function App() {
     loadContracts(signer);
   };
   const loadContracts = async (signer) => {
-    // Get deployed copies of contracts
     const marketplace = new ethers.Contract(
       MarketplaceAddress.address,
       MarketplaceAbi.abi,
@@ -68,13 +62,20 @@ function App() {
     const nft = new ethers.Contract(NFTAddress.address, NFTAbi.abi, signer);
     setNFT(nft);
     setNFT1(nft);
-    setLoading(false);
   };
   const AddMoreComp = () => {
     return (
       <>
         <Welcome web3Handler={web3Handler} account={account} />
         <Products />
+      </>
+    );
+  };
+  const Admin = () => {
+    return (
+      <>
+        <Welcome web3Handler={web3Handler} account={account} />
+        <AdminContent />
       </>
     );
   };
@@ -86,87 +87,31 @@ function App() {
           <Navigation web3Handler={web3Handler} account={account} />
         </>
         <div>
-          {false ? (
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                minHeight: "80vh",
-              }}
-            >
-              <Spinner animation="border" style={{ display: "flex" }} />
-              <p className="mx-3 my-0">Awaiting Metamask Connection...</p>
-            </div>
-          ) : (
-            <Routes>
-              {!IsAdmin ? (
-                <Route
-                  path="/"
-                  element={<AddMoreComp/>}
-                />
-              ):<Route
-                  path="/"
-                  element={<Welcome web3Handler={web3Handler} account={account}/>}
-                />}
-              <Route
-                path="/create"
-                element={<Create marketplace={marketplace} nft={nft} />}
-              />
-              <Route
-                path="/new-Warrenties"
-                element={<Home marketplace={marketplace} nft={nft} account={account} />}
-              />
-              <Route
-                path="/my-listed-items"
-                element={
-                  <MyListedItems
-                    marketplace={marketplace}
-                    nft={nft}
-                    account={account}
-                  />
-                }
-              />
-              <Route path="/:id" element={<ProductDetails />} />
-              <Route
-                path="/my-purchases"
-                element={
-                  <MyPurchases
-                    marketplace={marketplace}
-                    nft={nft}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/login"
-                element={
-                  <Login
-                    marketplace={marketplace}
-                    nft={nft}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/claimed"
-                element={
-                  <Claimed
-                    marketplace={marketplace}
-                    nft={nft}
-                    account={account}
-                  />
-                }
-              />
-               <Route
-                path="/logout"
-                element={<HandleLogout/>}
-              />
-            </Routes>
-          )}
+          <Routes>
+            {!IsAdmin ? (
+              <Route path="/" element={<AddMoreComp />} />
+            ) : (
+              <Route path="/" element={<Admin />} />
+            )}
+            <Route
+              path="/create"
+              element={<Create marketplace={marketplace} nft={nft} />}
+            />
+            <Route
+              path="/new-Warrenties"
+              element={
+                <Home marketplace={marketplace} nft={nft} account={account} />
+              }
+            />
+            <Route path="/my-listed-items" element={<MyListedItems />} />
+            <Route path="/:id" element={<ProductDetails />} />
+            <Route path="/my-purchases" element={<MyPurchases />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/claimed" element={<Claimed />} />
+            <Route path="/logout" element={<HandleLogout />} />
+          </Routes>
         </div>
       </div>
-      {/* <Footer/> */}
     </BrowserRouter>
   );
 }

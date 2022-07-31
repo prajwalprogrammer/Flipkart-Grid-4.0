@@ -18,7 +18,3 @@ module.exports = {
 //    },
 };
 
-
-// Deploying contracts with the account: 0x6CCA85eE0C115b83B8ebf705df09f93aBD47338f
-// Account balance: 367953434448926968
-// Market Place Address: 0x4d1E18F0BA11600141C6D09Becf8Ece5985f3C8d

@@ -3,16 +3,21 @@ const bodyParser=require("body-parser");
 const mongoose=require('mongoose');
 const cors=require('cors');
 const Item=require('./models/Item');
+const dotenv = require('dotenv');
 const twilio = require('twilio');
 const https=require("https");
-const accountSid = 'ACdf751da39a067eae9007fe47a0df77da'; // Your Account SID from www.twilio.com/console
-const authToken = '5d0af8854ef14b4ff00f6d9e2f9eee2c'; // Your Auth Token from www.twilio.com/console
+require('dotenv').config();
+
+const {LINK,AUTH,ACCOUNT}=process.env
+
+const accountSid =ACCOUNT; // Your Account SID from www.twilio.com/console
+const authToken = AUTH; // Your Auth Token from www.twilio.com/console
 const client = new twilio(accountSid, authToken);
 const app=express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb+srv://rahul:rahul@grid.4tfyk.mongodb.net/kryptoCart?retryWrites=true&w=majority",{useNewUrlParser:true})
+mongoose.connect(LINK,{useNewUrlParser:true})
 
 app.get("/",function(req,res){
     res.send("Hello");

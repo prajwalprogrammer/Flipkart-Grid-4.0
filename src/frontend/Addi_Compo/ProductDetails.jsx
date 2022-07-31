@@ -3,7 +3,7 @@ import { TransactionContext } from "../context/TransactionContext";
 import { ToastContainer, toast } from "react-toastify";
 
 export const ProductDetails = () => {
-  const {phoneNum,setPhoneNum}=useContext(TransactionContext);
+  const {setPhoneNum}=useContext(TransactionContext);
   const showMsg=()=>{
     toast.success("Phone Number Submitted Successfully");
   }

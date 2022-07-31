@@ -5,14 +5,9 @@ import { TransactionContext } from "../context/TransactionContext";
 import './Navbar.css';
 import logo from "../../images/Logo.png";
 
-function sayHello() {
-  alert("NFTS created here will be of 0.0001 ether (Excluding Gas Prices)");
-  const newLocal = (window.location.href = "localhost:3000/login");
-  newLocal();
-}
 
 const Navigation = ({ web3Handler, account }) => {
-  const { IsAdmin, HandleLogout } = React.useContext(TransactionContext);
+  const { IsAdmin } = React.useContext(TransactionContext);
 
   return (
     <Navbar className="navbar" expand="lg" variant="dark">

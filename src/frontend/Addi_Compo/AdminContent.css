@@ -1,0 +1,49 @@
+.aboutUs{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1a3758, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2b3849, #080e18); 
+}
+
+.aboutTitle{
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.aboutContent{
+    color: white;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.teamMembers{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.photo{
+    margin: 20px;
+}
+
+.teamImages{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.teamMates{
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 24px;
+    margin: 20px;
+}
+
+.imp{
+    color: orange;
+}
