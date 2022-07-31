@@ -5,10 +5,19 @@ Following commands will be of utmost importance while cloning the repository
 3. `npx hardhat run src/backend/scripts/deploy.js --network localhost`
 4. `npm run start`
 
-Change Directory to server folder <br/>
+Change directory to server <br/>
 1. `cd src/server/` <br/>
 2. `npm i ` <br/>
 3. `node index.js` <br/>
+
+### Additional Installations
+1. For sending sms, firstly create your API Key on https://www.twilio.com/docs/sms .
+2. Create your mongoDB cluster on https://www.mongodb.com/ .
+
+# Implemented Video
+https://user-images.githubusercontent.com/84375036/182044251-7e014fb2-8e77-4b0e-86c8-3fb20c13cb9a.mp4
+
+# PPT link:
 
 ### Authors
 
