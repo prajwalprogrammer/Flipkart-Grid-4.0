@@ -1,5 +1,5 @@
 import Rahul from "../../images/Rahul.jpeg";
-import Prajwal from "../../images/Ayush.jpg";
+import Prajwal from "../../images/Prajwal.jpg";
 import Ayush from "../../images/Ayush.jpg";
 import './AdminContent.css';
 
